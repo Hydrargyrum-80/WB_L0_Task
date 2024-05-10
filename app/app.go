@@ -57,8 +57,7 @@ func Start() {
 	sub, err := conn.Subscribe(
 		"stream-name",
 		handle,
-		stan.DurableName("test-subscriber"),
-	)
+		stan.DeliverAllAvailable())
 	if err != nil {
 		log.Print(err)
 		return
